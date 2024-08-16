@@ -5,8 +5,10 @@
   
   "scripts": {
     "test": "jest",
-     "start": "rm -rf .parcel-cache && parcel",
-    "build": "rm -rf .parcel-cache && parcel build"
+    "start": "rm -rf .parcel-cache && parcel",
+    "build": "rm -rf .parcel-cache && parcel build",
+    "startp": "parcel index.html",
+    "buildp": "parcel build index.html"
   },
   
   "author": "",
