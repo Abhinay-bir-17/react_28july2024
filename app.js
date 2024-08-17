@@ -6,10 +6,38 @@ root.render(heading)
 console.log('heading:',heading)
 
 // jsx
-const jsxheading = <h1 id='jheading'>hello from jsx</h1>
+// react element
+const jsxheading = (<h1 id='jheading'>
+            hello from jsx
+            </h1>);
+const HeadingComponent = ()=>{
+  return (
+    <div id='container'>
+      
+      <Title/>
+      {Title}
+      <h1 className='heading'>hello
+        ahinay bir,give ur best
+        btw hello from react functional
+        component aka HeadingComponent
+      </h1>
+    </div>
+  );
+}
+const Title = ()=>{
+  return (
+    <h1>rendering title comp inside
+      heading comp
+      {console.log('hi abhinay ')}
+    </h1>
+  );
+}
 const root2 = ReactDOM.createRoot(document.getElementById('root2'))
 console.log('jsheading:', jsxheading)
 root2.render(jsxheading)
+
+const root3 = ReactDOM.createRoot(document.getElementById('root3'))
+root3.render(<HeadingComponent/>)
 
 
 // const heading =  React.createElement('h1', {id:'heading'}, 'hello abhinay bir from react which is in app.js')
@@ -40,4 +68,3 @@ root2.render(jsxheading)
 //     ])
 // )
 // root.render(parent)
-
