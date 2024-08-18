@@ -13,25 +13,32 @@ const jsxheading = (<h1 id='jheading'>
 const HeadingComponent = ()=>{
   return (
     <div id='container'>
-      
+         
       <Title/>
-      {Title}
+      <Title></Title>
+      {spanel}
+      {Title()}
+      {20000}
+      {'writing a string inside js'+'fasdfa'}
+
       <h1 className='heading'>hello
         ahinay bir,give ur best
         btw hello from react functional
-        component aka HeadingComponent
+        component aka HeadingComponent.
       </h1>
     </div>
   );
 }
+const spanel = <span>this is a spa</span>
 const Title = ()=>{
   return (
     <h1>rendering title comp inside
-      heading comp
+      heading component
       {console.log('hi abhinay ')}
     </h1>
   );
 }
+
 const root2 = ReactDOM.createRoot(document.getElementById('root2'))
 console.log('jsheading:', jsxheading)
 root2.render(jsxheading)
