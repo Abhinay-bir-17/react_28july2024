@@ -1,43 +1,39 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-const heading = React.createElement('h1',{},'hello from abhinay bir');
+const heading = React.createElement('h1',{},'heading made using core react');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(heading)
-console.log('heading:',heading)
+console.log('core react heading:',heading)
 
-// jsx
+// jsx    
 // react element
 const jsxheading = (<h1 id='jheading'>
-            hello from jsx
+            hello from jsx, root2.
             </h1>);
 const HeadingComponent = ()=>{
-  return (
+  return ( 
     <div id='container'>
-         
+      {'heading componenets starts here'}
       <Title/>
       <Title></Title>
+      {/* the above 2 lines r same, they r components */}
       {spanel}
       {Title()}
-      {20000}
-      {'writing a string inside js'+'fasdfa'}
-
-      <h1 className='heading'>hello
-        ahinay bir,give ur best
-        btw hello from react functional
-        component aka HeadingComponent.
-      </h1>
+      {/* the above  */}
+      {20000}<br></br>
+      {'writing a string inside js'+'fasdfa'}<br></br>
+      {'heading components ends here'}
     </div>
-  );
-}
+  );                                                                             
+}         
 const spanel = <span>this is a spa</span>
 const Title = ()=>{
   return (
-    <h1>rendering title comp inside
-      heading component
+    <h1>this is title fnl cmpnt
       {console.log('hi abhinay ')}
-    </h1>
-  );
-}
+    </h1> 
+  );      
+}         
 
 const root2 = ReactDOM.createRoot(document.getElementById('root2'))
 console.log('jsheading:', jsxheading)
