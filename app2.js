@@ -16,24 +16,44 @@ const Header = ()=>{
     </div>
   );
 }
-const Card = ()=>{
+const Card = (props)=>{
+     
+  console.log('props is:', props)
   return (
     <div className='card'>
       <img alt='shahi samosa' className='shsam' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi_m0320GiUdy3G31957ywUwWMTlanIXm5NA&s'/>
-      <h3>Shahi Samosa, Jodhpur</h3>
-      <h4>4.8 stars</h4>
-      <h4>review : one of the the best samosa's u will ever eat</h4>
+      <h3>{props.resName}</h3>
+      <h4>{props.rating}</h4>
+      <h4>{props.review}</h4>
     </div>
   ); 
+}
+const resObj = {
+  resName:"Janta sweets",
+  rating:"5 stars",
+  review:"its just insane"
 }
 const Body = ()=>{
   return (
     <div className='body'>
-      <div className='search'>
-        Search
-      </div>
+      <div className='search'>Search</div>
       <div className='container'>
-        <Card/> {Card()} <Card/><Card/><Card/><Card/><Card/><Card/><Card/>
+        <Card     
+          resName="Shahi samosa"
+          rating="4.8 stars"
+          review="one of the the best samosa's u will ever eat"
+        /> 
+        <Card
+          resName="Mishrilal Lassi"
+          rating="4.5 stars"
+          review="variety of foods & lassi with awsm ambience"
+        />
+        <Card
+          // resData = {resObj}
+          resName="Janta Sweets"
+          rating="5 stars"
+          review="the best shop to eat in jodhpur imo"
+        />
       </div>
     </div>
   );
