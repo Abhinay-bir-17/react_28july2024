@@ -2,6 +2,7 @@ import Card from "./Card";
 import resObj from "../utils/mockData";   
 import {useState} from "react";  
 import {useEffect} from "react";  
+import Shimmer  from "./Shimmer";
 const Body = ()=>{  
   const [listOfRes, setListOfRes]= useState([ ])
   console.log('listofres:', listOfRes)
@@ -18,14 +19,20 @@ const Body = ()=>{
     // optional chaining , read abt it
     setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
+  // below is conditional rendering
   if(listOfRes.length===0){  
-    return <h1>Loading.........</h1>
+    return <Shimmer/>  
+
   }
   console.log('will this be printed b4 useEffect')
   return (      
     <div className='body'>
       <div className='filter'>
-        <button className="filter_btn" onClick={()=>{
+        <div className="filter-search">
+          <input className="filter-search-input"></input>
+          <button className="filter-search-btn">Search</button>
+        </div>
+        <button className="filter-btn" onClick={()=>{
           // write filter logic here
           filteredList = listOfRes.filter((res)=> res.rating >4.5);
 
