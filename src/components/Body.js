@@ -4,6 +4,7 @@ import {useState} from "react";
 import {useEffect} from "react";  
 import Shimmer  from "./Shimmer";
 const Body = ()=>{  
+  // [] means below that initially listOfRes is empty
   const [listOfRes, setListOfRes]= useState([ ])
   console.log('listofres:', listOfRes)
   useEffect (()=>{
@@ -19,11 +20,11 @@ const Body = ()=>{
     // optional chaining , read abt it
     setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
-  // below is conditional rendering
+  // below is called as conditional rendering
   if(listOfRes.length===0){  
     return <Shimmer/>  
-
   }
+
   console.log('will this be printed b4 useEffect')
   return (      
     <div className='body'>
@@ -34,8 +35,8 @@ const Body = ()=>{
         </div>
         <button className="filter-btn" onClick={()=>{
           // write filter logic here
-          filteredList = listOfRes.filter((res)=> res.rating >4.5);
-
+          filteredList = listOfRes.filter((res)=> res.info.avgRating >4.5);
+          // {var}
           console.log('after clicking update btn:',filteredList)
           setListOfRes(filteredList)
         }}>Top Rated Restaurants</button>

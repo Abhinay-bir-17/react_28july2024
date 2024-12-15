@@ -2,7 +2,7 @@ import {LOGO_URL} from "../utils/constants"
 import { useState } from "react";
 import { useEffect } from "react";
 const Header = ()=>{  
-
+  console.log('header is called whenever the button is clicked as btnTxt is react variable not just a js variable ')
   const [btnTxt, setbtnTxt] = useState(['Login'])
   return (
     <div className='header'>
