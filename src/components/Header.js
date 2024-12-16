@@ -1,6 +1,7 @@
 import {LOGO_URL} from "../utils/constants"
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const Header = ()=>{  
   console.log('header is called whenever the button is clicked as btnTxt is react variable not just a js variable ')
   const [btnTxt, setbtnTxt] = useState(['Login'])
@@ -12,9 +13,15 @@ const Header = ()=>{
       <div className='navItems'>
         <ul>
           <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Cart</li>
+          <li>
+          <Link to="/about" >About us</Link>
+          </li>
+          <li>
+          <Link to="/contact">Contact us</Link>
+          </li>
+          <li>
+          <Link to="cart">Cart</Link>
+          </li>
           <button className="login" onClick={()=>{
             if(btnTxt==="Logout")setbtnTxt('Login')
             else  setbtnTxt('Logout')
